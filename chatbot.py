@@ -11,7 +11,7 @@ from langchain.memory import ConversationBufferWindowMemory
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 
-# Load environment variables from a .env file (containing OPENAI_API_KEY)
+# Load .env (OPENAI_API_KEY and more.)
 load_dotenv()
 
 # Set the OpenAI API key and dataset path from the environment variables
@@ -21,13 +21,14 @@ openai.api_key = os.environ.get('OPENAI_API_KEY')
 file_name = "output.html"
 updated_file_name = "output_updated.html"
 
-st.title('FigmaChain')
+st.title('UIgpt')
 
-# Define the chatbot template
+# chatbot template
 template = """Assistant is a senior developer. Assistant only writes new code and does not write additional text.
 Assistant is designed to assist with front-end development incorporating modern design principles such as responsive design.
 Assistant is constantly learning and improving, and its capabilities are constantly evolving. It is able to process and understand large amounts of code, and can use this knowledge to provide accurate and informative coding updates.
 Overall, Assistant is a powerful tool that can help with a wide range of design and development tasks.
+One more thing, Assistant adds a cool feature in every code that is created without being asked by the client. For example, creating a responsive moving background.
 {history}
 Human: {human_input}
 Assistant:"""
@@ -84,7 +85,7 @@ def get_text():
 
 # Initialize the session state for generated responses and past inputs
 if 'generated' not in st.session_state:
-    st.session_state['generated'] = ['I am ready to help you update your Figma design']
+    st.session_state['generated'] = ['Apakah ada yang bisa dibantu?']
 
 if 'past' not in st.session_state:
     st.session_state['past'] = ['Hello']
