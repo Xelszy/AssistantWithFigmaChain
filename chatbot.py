@@ -21,7 +21,7 @@ openai.api_key = os.environ.get('OPENAI_API_KEY')
 file_name = "output.html"
 updated_file_name = "output_updated.html"
 
-st.title('UIgpt')
+st.title('FigmaChainAssistent')
 
 # chatbot template
 template = """Assistant is a senior developer. Assistant only writes new code and does not write additional text.
